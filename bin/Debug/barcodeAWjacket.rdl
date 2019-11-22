@@ -30,39 +30,34 @@
       <rd:SecurityType>Integrated</rd:SecurityType>
       <rd:DataSourceID>7c7478a6-253d-499c-aaf3-7015388e4a4e</rd:DataSourceID>
     </DataSource>
-    <DataSource Name="DataSource1">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=.;Initial Catalog=Darien</ConnectString>
-        <IntegratedSecurity>true</IntegratedSecurity>
-      </ConnectionProperties>
-      <rd:SecurityType>Integrated</rd:SecurityType>
-      <rd:DataSourceID>cf969011-449d-46be-a1ee-15e7f48e7a55</rd:DataSourceID>
-    </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataSetAWJacket">
       <Query>
-        <DataSourceName>DataSource1</DataSourceName>
-        <CommandText>SELECT [Package ID]
-      ,[Last Name]
-      ,[Selection]
-      ,[Invoice Date]
+        <DataSourceName>EPOD</DataSourceName>
+        <CommandText>DBCC FREEPROCCACHE;
+  alter SEQUENCE [dbo].[SN]
+RESTART WITH 1
+INCREMENT BY 1
+
+SELECT    [Package ID]
+      ,f.[Invoice Date]
       ,[Inventory #]
-      ,[SN]
-  FROM [Darien].[dbo].[barcodeAWJacket]</CommandText>
+      ,next value for [dbo].[sn] over (order by f.[Inventory #]) as SN   
+     ,rtrim(ltrim(ISNULL([Last Name 15],'')+SPACE(3)+ISNULL([Adult Name A],'')+space(3)+isnull([Adult Name B],''))) as lastName
+     ,s.[Description]
+  FROM [EPOD].[dbo].[PRODUCT] f
+  join [EPOD].[dbo].[SUMMARY] s
+  on s.Item=f.[Inventory #]
+  where s.Pgm in (select  pgm from awjacketpgm) </CommandText>
       </Query>
       <Fields>
-        <Field Name="Package_ID">
+        <Field Name="package_id">
           <DataField>Package ID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Last_Name">
-          <DataField>Last Name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Selection">
-          <DataField>Selection</DataField>
+        <Field Name="lastname">
+          <DataField>lastName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Invoice_Date">
@@ -75,6 +70,10 @@
         </Field>
         <Field Name="SN">
           <DataField>SN</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -101,7 +100,7 @@
                           <ReportItems>
                             <Image Name="Image3">
                               <Source>Database</Source>
-                              <Value>=Code.Convert(Fields!Package_ID.Value.ToString)</Value>
+                              <Value>=Code.Convert(Fields!package_id.Value.ToString)</Value>
                               <MIMEType>image/bmp</MIMEType>
                               <Sizing>Fit</Sizing>
                               <Top>0.24585in</Top>
@@ -121,7 +120,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Fields!Package_ID.Value</Value>
+                                      <Value>=Fields!package_id.Value</Value>
                                       <Style>
                                         <FontWeight>Normal</FontWeight>
                                       </Style>
@@ -155,7 +154,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Fields!Selection.Value</Value>
+                                      <Value>=Fields!Description.Value</Value>
                                       <Style>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
@@ -307,7 +306,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Fields!Last_Name.Value</Value>
+                                      <Value>=Fields!lastname.Value</Value>
                                       <Style>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
@@ -364,7 +363,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSetPlanter</DataSetName>
+            <DataSetName>DataSetAWJacket</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
@@ -394,7 +393,7 @@
                           <ReportItems>
                             <Image Name="Image5">
                               <Source>Database</Source>
-                              <Value>=Code.Convert(Fields!Package_ID.Value.ToString)</Value>
+                              <Value>=Code.Convert(Fields!package_id.Value.ToString)</Value>
                               <MIMEType>image/bmp</MIMEType>
                               <Sizing>Fit</Sizing>
                               <Top>0.24585in</Top>
@@ -414,7 +413,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Fields!Package_ID.Value</Value>
+                                      <Value>=Fields!package_id.Value</Value>
                                       <Style>
                                         <FontWeight>Normal</FontWeight>
                                       </Style>
@@ -448,7 +447,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Fields!Selection.Value</Value>
+                                      <Value>=Fields!Description.Value</Value>
                                       <Style>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
@@ -461,9 +460,9 @@
                               </Paragraphs>
                               <rd:DefaultName>Selection</rd:DefaultName>
                               <Top>0.74029in</Top>
-                              <Left>0.36666in</Left>
+                              <Left>0.22083in</Left>
                               <Height>0.3in</Height>
-                              <Width>1.35834in</Width>
+                              <Width>1.75in</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -657,7 +656,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSetPlanter</DataSetName>
+            <DataSetName>DataSetAWJacket</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>

@@ -14,6 +14,10 @@
   <DataSets />
   <Reports>
     <ProjectItem>
+      <Name>AWJacket_PackingList.rdl</Name>
+      <FullPath>AWJacket_PackingList.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>barcodeFlag.rdl</Name>
       <FullPath>barcodeFlag.rdl</FullPath>
     </ProjectItem>
@@ -38,10 +42,6 @@
       <FullPath>barcodePlaque.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>BarcodeProject4space1imgd1b.rdl</Name>
-      <FullPath>BarcodeProject4space1imgd1b.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>barcodeStationarySet.rdl</Name>
       <FullPath>barcodeStationarySet.rdl</FullPath>
     </ProjectItem>
@@ -52,14 +52,6 @@
     <ProjectItem>
       <Name>barcodeWooden.rdl</Name>
       <FullPath>barcodeWooden.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Copy of SUMMARY_REPORT.rdl</Name>
-      <FullPath>Copy of SUMMARY_REPORT.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>drilldown.rdl</Name>
-      <FullPath>drilldown.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Flag_PackingList.rdl</Name>
@@ -74,10 +66,6 @@
       <FullPath>MetalDoor_PackingList.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>PackingListProject.rdl</Name>
-      <FullPath>PackingListProject.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Planter_PackingList.rdl</Name>
       <FullPath>Planter_PackingList.rdl</FullPath>
     </ProjectItem>
@@ -88,10 +76,6 @@
     <ProjectItem>
       <Name>StationarySet_PackingList.rdl</Name>
       <FullPath>StationarySet_PackingList.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>SUMMARY_REPORT.rdl</Name>
-      <FullPath>SUMMARY_REPORT.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>SummaryMetaData_PackingList.rdl</Name>
@@ -106,12 +90,12 @@
       <FullPath>Wooden_PackingList.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>AWJacket_PackingList.rdl</Name>
-      <FullPath>AWJacket_PackingList.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>YardSign_PackingList.rdl</Name>
       <FullPath>YardSign_PackingList.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>barcodeAWJacket.rdl</Name>
+      <FullPath>barcodeAWJacket.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
