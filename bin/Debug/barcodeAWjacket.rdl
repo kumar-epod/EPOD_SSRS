@@ -40,7 +40,7 @@
 RESTART WITH 1
 INCREMENT BY 1
 
-SELECT    [Package ID]
+SELECT      [Package ID]
       ,f.[Invoice Date]
       ,[Inventory #]
       ,next value for [dbo].[sn] over (order by f.[Inventory #]) as SN   

@@ -17,7 +17,7 @@
     <DataSet Name="DS_Summary">
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
-        <CommandText>SELECT   File#, Pgm, Item,[Description], [Invoice Dt], Qty
+        <CommandText>SELECT    File#, Pgm, Item,[Description], [Invoice Dt], Qty
 FROM     summary
 WHERE pgm in (SELECT  pgm FROM       planterpgm)</CommandText>
       </Query>

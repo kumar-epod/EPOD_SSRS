@@ -32,7 +32,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetPlanter">
+    <DataSet Name="DataSetSeasonalPlaque">
       <Query>
         <DataSourceName>EPOD</DataSourceName>
         <CommandText>alter SEQUENCE [dbo].[SN]
@@ -42,15 +42,15 @@ INCREMENT BY 1
 SELECT     [Package ID]
       ,f.[Invoice Date]
       ,[Inventory #]
-      ,next value for [dbo].[sn] over (order by f.[Inventory #]) as SN   
-	  ,rtrim(ltrim(ISNULL([Last Name 15],'')+SPACE(3)+ISNULL([Adult Name A],'')+space(3)+isnull([Adult Name B],''))) as lastName
-      ,f.[adult inscrip a]+space(2)+f.[inscription] as selection
-      ,s.[Description]
- FROM [EPOD].[dbo].[PRODUCT] f
- join [EPOD].[dbo].[summary] s
- on s.Item=f.[Inventory #]
-     where s.Pgm in (select  pgm from planterpgm) 
-  </CommandText>
+      ,next value for [dbo].[sn] over (order by f.[Inventory #]) as SN          
+      
+  , f.[adult inscrip a] as lastname,f.[inscription] as selection 
+   ,s.[Description]
+  FROM [EPOD].[dbo].[PRODUCT] f
+  join [EPOD].[dbo].[summary] s
+  on s.Item=f.[Inventory #]
+  
+  where s.Pgm in (select  pgm from seasonalplaquepgm) </CommandText>
       </Query>
       <Fields>
         <Field Name="package_id">
@@ -58,7 +58,7 @@ SELECT     [Package ID]
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="lastname">
-          <DataField>lastName</DataField>
+          <DataField>lastname</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Selection">
@@ -92,7 +92,7 @@ SELECT     [Package ID]
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.22501in</Width>
+                  <Width>2.45001in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -172,9 +172,8 @@ SELECT     [Package ID]
                               </Paragraphs>
                               <rd:DefaultName>Selection</rd:DefaultName>
                               <Top>0.74029in</Top>
-                              <Left>0.26249in</Left>
                               <Height>0.3in</Height>
-                              <Width>1.74167in</Width>
+                              <Width>2.45001in</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -324,9 +323,9 @@ SELECT     [Package ID]
                               </Paragraphs>
                               <rd:DefaultName>lastname</rd:DefaultName>
                               <Top>0.58196in</Top>
-                              <Left>0.31874in</Left>
+                              <Left>0.26249in</Left>
                               <Height>0.25in</Height>
-                              <Width>1.52917in</Width>
+                              <Width>1.74167in</Width>
                               <ZIndex>7</ZIndex>
                               <Style>
                                 <Border>
@@ -368,13 +367,13 @@ SELECT     [Package ID]
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSetPlanter</DataSetName>
+            <DataSetName>DataSetSeasonalPlaque</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Left>0.42917in</Left>
             <Height>1.93055in</Height>
-            <Width>2.22501in</Width>
+            <Width>2.45001in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -465,9 +464,8 @@ SELECT     [Package ID]
                               </Paragraphs>
                               <rd:DefaultName>Selection</rd:DefaultName>
                               <Top>0.74029in</Top>
-                              <Left>0.36666in</Left>
                               <Height>0.3in</Height>
-                              <Width>1.35834in</Width>
+                              <Width>2.29417in</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -661,7 +659,7 @@ SELECT     [Package ID]
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSetPlanter</DataSetName>
+            <DataSetName>DataSetSeasonalPlaque</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>

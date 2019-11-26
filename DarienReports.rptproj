@@ -18,6 +18,10 @@
       <FullPath>AWJacket_PackingList.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>barcodeAWJacket.rdl</Name>
+      <FullPath>barcodeAWJacket.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>barcodeFlag.rdl</Name>
       <FullPath>barcodeFlag.rdl</FullPath>
     </ProjectItem>
@@ -94,8 +98,24 @@
       <FullPath>YardSign_PackingList.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>barcodeAWJacket.rdl</Name>
-      <FullPath>barcodeAWJacket.rdl</FullPath>
+      <Name>barcodeYardSign.rdl</Name>
+      <FullPath>barcodeYardSign.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>barcodeSeasonalPlaque.rdl</Name>
+      <FullPath>barcodeSeasonalPlaque.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SeasonalPlaque_PackingList.rdl</Name>
+      <FullPath>SeasonalPlaque_PackingList.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Grandma_PackingList.rdl</Name>
+      <FullPath>Grandma_PackingList.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>barcodeGrandma.rdl</Name>
+      <FullPath>barcodeGrandma.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

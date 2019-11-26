@@ -35,7 +35,7 @@
     <DataSet Name="DataSet_barcodeMetaData">
       <Query>
         <DataSourceName>EPOD</DataSourceName>
-        <CommandText>SELECT        [Package ID]
+        <CommandText>SELECT         [Package ID]
       ,[Last Name]
       ,[Selection]
       ,[Invoice Date]

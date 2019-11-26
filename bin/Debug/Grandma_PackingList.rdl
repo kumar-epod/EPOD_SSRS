@@ -19,7 +19,7 @@
         <DataSourceName>DataSource1</DataSourceName>
         <CommandText>SELECT    File#, Pgm, Item,[Description], [Invoice Dt], Qty
 FROM     summary
-WHERE pgm in (SELECT  pgm FROM       planterpgm)</CommandText>
+WHERE pgm in (SELECT  pgm FROM     grandmapgm)</CommandText>
       </Query>
       <Fields>
         <Field Name="File_">
@@ -74,24 +74,29 @@ WHERE pgm in (SELECT  pgm FROM       planterpgm)</CommandText>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>PLANTER PACKING LIST </Value>
+                    <Value>        GRANDMA PACKING LIST </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
+                      <Format>M/d/yy</Format>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>from </Value>
-                    <Style />
+                    <Style>
+                      <Format>M/d/yy</Format>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Today()</Value>
                     <Style>
-                      <Format>M/d/yyyy</Format>
+                      <Format>M/d/yy</Format>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value> order</Value>
-                    <Style />
+                    <Style>
+                      <Format>M/d/yy</Format>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -99,9 +104,9 @@ WHERE pgm in (SELECT  pgm FROM       planterpgm)</CommandText>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>2.33354in</Top>
-            <Left>1.79148in</Left>
+            <Left>0.98315in</Left>
             <Height>0.25in</Height>
-            <Width>3.5in</Width>
+            <Width>4.30833in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
